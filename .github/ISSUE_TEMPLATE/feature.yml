@@ -1,0 +1,30 @@
+name: Feature / spec
+description: A feature or spec with acceptance criteria
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes: {label: Problem}
+    validations: {required: true}
+  - type: textarea
+    id: proposal
+    attributes: {label: Proposal}
+    validations: {required: true}
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Reviewers check the PR against these. Edit the issue after creating it to add the real criteria as a task list.
+      options:
+        - label: Acceptance criteria are listed in the Proposal or a comment as a checklist
+          required: true
+  - type: textarea
+    id: criteria
+    attributes: {label: Acceptance criteria checklist, value: "- [ ] \n- [ ] "}
+    validations: {required: true}
+  - type: input
+    id: design
+    attributes: {label: Design / mockup link}
+  - type: input
+    id: spec
+    attributes: {label: docs/ spec path, placeholder: "docs/design/..."}

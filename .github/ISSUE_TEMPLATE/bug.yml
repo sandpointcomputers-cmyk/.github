@@ -1,0 +1,27 @@
+name: Bug report
+description: Something is broken
+labels: ["bug"]
+body:
+  - type: textarea
+    id: steps
+    attributes: {label: Steps to reproduce, placeholder: "1. Go to ...\n2. Click ..."}
+    validations: {required: true}
+  - type: textarea
+    id: expected
+    attributes: {label: Expected}
+    validations: {required: true}
+  - type: textarea
+    id: actual
+    attributes: {label: Actual}
+    validations: {required: true}
+  - type: input
+    id: env
+    attributes: {label: Environment, description: "beta/demo/prod, commit, browser/device, role"}
+    validations: {required: true}
+  - type: dropdown
+    id: severity
+    attributes: {label: Severity, options: [High, Medium, Low]}
+    validations: {required: true}
+  - type: input
+    id: source
+    attributes: {label: Source, description: "Review comment, PR, log or docs/ path where this was found"}
