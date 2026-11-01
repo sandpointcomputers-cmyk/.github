@@ -1,0 +1,52 @@
+name: Decision for Jens
+description: A question that needs Jens's decision (see spc-shared-modules docs/design/decisions-dashboard.md)
+title: "Decision: "
+labels: ["needs-jens"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: One sentence.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why now / blocking
+      description: PR, build or deadline this blocks.
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options
+      description: Numbered. Mark the recommended one. Jens answers with `/decide N`.
+      value: |
+        1. <option> (recommended)
+        2. <option>
+        3. Something else (reply in words)
+    validations:
+      required: true
+  - type: input
+    id: default
+    attributes:
+      label: Default if no answer by
+      placeholder: date, or "none"
+  - type: dropdown
+    id: asked_by
+    attributes:
+      label: Asked by
+      options: [claude, skippy, bilby, jarvis]
+    validations:
+      required: true
+  - type: input
+    id: dedupe
+    attributes:
+      label: Dedupe key
+      placeholder: "<repo>:<topic-slug>"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "Add the `asked-by:<agent>` label. Use `urgent` only for customer-down or security. No secrets, customer data or client staff names."
