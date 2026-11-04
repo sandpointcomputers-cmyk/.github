@@ -1,0 +1,45 @@
+name: Agent task / handoff
+description: A unit of work owned by an agent (or Jens), with a clear next step for handoff.
+title: "[Task] "
+labels: ["handoff"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What outcome is needed, and why.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Checklist that defines done.
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: dropdown
+    id: owner
+    attributes:
+      label: Owner agent
+      options:
+        - Bilby
+        - Claude
+        - Codex
+        - Skippy
+        - Jarvis
+        - Jens
+    validations:
+      required: true
+  - type: textarea
+    id: next
+    attributes:
+      label: Next step / handoff notes
+      description: Current state, what the next owner should do first, blockers. Add the needs-jens label if waiting on Jens.
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: Related PRs, issues, builds, docs.
